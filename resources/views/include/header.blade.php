@@ -5,19 +5,22 @@
                 <div class="container">
                     <div class="row">
                     	<div class="wt-topbar-left clearfix">
+                            @isset($header_contact)
                         	<ul class="list-unstyled e-p-bx pull-right">
-                                <li class="email"><i class="fa fa-envelope"></i>contact@crepus108.com</li>
-                                <li><i class="fa fa-phone"></i>(888) 123-4567</li>
+                                <li class="email"><a href="mailto:{{ $header_contact->email ?? '' }}"><i class="fa fa-envelope"></i>{{ $header_contact->email ?? '' }}</a></li>
+                                <li><a href="tel:{{ $header_contact->phone }}"><i class="fa fa-phone"></i>{{ $header_contact->phone ?? '' }}</a></li>
                             </ul>
+                            @endisset
                         </div>
                         <div class="wt-topbar-right clearfix">
+                            @isset($social)
                         	<ul class="social-bx list-inline pull-right">
-                                <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                                <li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
-                                <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
+                                <li><a href="{{ $social->facebook ?? '#' }}" class="fa fa-facebook"></a></li>
+                                <li><a href="{{ $social->linkedin ?? '#' }}" class="fa fa-linkedin"></a></li>
+                                <li><a href="{{ $social->youtube ?? '#' }}" class="fa fa-youtube"></a></li>
+                                <li><a href="{{ $social->instagram ?? '#' }}" class="fa fa-instagram"></a></li>
                             </ul>
-                            
+                            @endisset
                         </div>
                     </div>
                 </div>
@@ -134,25 +137,19 @@
                             
                                 <li>
                                     <a href="{{ route('service.index') }}">Services<i class="fa fa-chevron-down"></i></a>
+                                    @isset($menu_service_categories)
                                     <ul class="sub-menu">
+                                        @foreach($menu_service_categories as $category)
                                         <li>
-                                            <a href="{{ route('service.single',['slug'=>'tresses']) }}">Tresses</a>
+                                            <a href="{{ route('service.single',['slug'=>$category->slug]) }}">{{ $category->name }}</a>
                                             <!-- <ul class="sub-menu">
                                                 <li><a href="#">Tresse sans rajouts</a></li>
                                                 <li><a href="#">Tresse avec rajouts</a></li>
                                             </ul> -->
                                         </li>
-                                        <li>
-                                            <a href="{{ route('service.single',['slug'=>'tissage']) }}">Tissage</a>
-                                            <!-- <ul class="sub-menu">
-                                                <li><a href="#">Poste Tissage</a></li>
-                                                <li><a href="faq-2.html">Extension Tissage</a></li>
-                                            </ul> -->
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('service.single',['slug'=>'coiffure']) }}">Coiffure</a>
-                                        </li>
+                                        @endforeach
                                     </ul>
+                                    @endisset
                                 </li>
                                 
                                 <!-- <li>

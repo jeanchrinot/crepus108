@@ -10,9 +10,14 @@ class ServiceController extends Controller
 {
     public function index()
     {
+        // Get all service categories - Show 4 items at a time
         $service_categories = Servicecategory::paginate(4);
+
+        // Page banner title
+        $page_banner = ['Services',''];
+
     	// show service categories
-    	return view('service',compact('service_categories'));
+    	return view('service',compact(['page_banner','service_categories']));
     }
 
     public function show($slug)
@@ -23,8 +28,11 @@ class ServiceController extends Controller
         // get all subcategories belonging to the specific category
         $service_subcategories = $service_category->servicesubcategories;
 
+        // Page banner title
+        $page_banner = ['Services',$service_category->name];
+
     	// Show single category subcategories page
-    	return view('single-service-category',compact(['service_category','service_subcategories']));
+    	return view('single-service-category',compact(['page_banner','service_category','service_subcategories']));
     }
 
     public function reservation()

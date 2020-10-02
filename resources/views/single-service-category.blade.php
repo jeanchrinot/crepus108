@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('title','Service - Tresses')
+@section('title')
+	Services - {{ $page_banner[1] ?? 'Services' }}
+@endsection
 
 @section('main')
 

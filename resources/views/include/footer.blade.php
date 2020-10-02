@@ -41,8 +41,7 @@
                                 <div class="logo-footer clearfix p-b15">
                                     <a href="{{ route('home') }}"><img src="/images/crepus108-NoBG-small.png" width="230" height="67" alt=""/></a>
                                 </div>
-                                <p>CREPUS 108 ou CREPUS "Valo ambiny zato", est une coiffeuse a domicile spécialisée pour l'entretien des cheveux naturels (crépu, bouclés, frisés, lisses).
-                                </p>  
+                                <p>{{ $about->about_short ?? '' }} </p>  
                             </div>
                         </div>      
                         <!-- USEFUL LINKS -->
@@ -75,14 +74,14 @@
                             <!-- SOCIAL LINKS -->
                             <div class="widget widget_social_inks">
                                 <h4 class="widget-title">Suivez-nous</h4>
+                                @isset($social)
                                 <ul class="social-icons social-square social-darkest">
-                                    <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
+                                    <li><a href="{{ $social->facebook ?? '#' }}" class="fa fa-facebook"></a></li>
+                                    <li><a href="{{ $social->linkedin ?? '#' }}" class="fa fa-linkedin"></a></li>
+                                    <li><a href="{{ $social->youtube ?? '#' }}" class="fa fa-youtube"></a></li>
+                                    <li><a href="{{ $social->instagram ?? '#' }}" class="fa fa-instagram"></a></li>
                                 </ul>
+                                @endisset
                             </div>
                         </div>
                     </div>

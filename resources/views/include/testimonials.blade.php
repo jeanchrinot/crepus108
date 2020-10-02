@@ -11,100 +11,36 @@
                                 <span class="separator-right bg-primary"></span>
                             </div>                            
                         </div>
-                        <p>Nos clients exprimenent leur avis sur la qualité de nos services.</p>
+                        <p>Nos clients expriment leur avis sur la qualité de nos services.</p>
                     </div>
                     <!-- TITLE END-->
                     <div class="section-content">
+                        @isset($testimonials)
                         <div class="owl-carousel home-carousel-1">
+                            @foreach($testimonials as $key => $testimonial)
                             <div class="item">
                                 <div class="testimonial-5 bg-white radius-sm">
                                 	<div class="testimonial-pic-block radius-bx"> 
                                     	<div class="testimonial-pic radius">
-                                        	<img src="images/testimonials/client.jpg" width="132" height="132" alt="">
+                                        	<img src="images/testimonials/{{ $testimonial->image }}" width="132" height="132" alt="">
                                         </div>
                                     </div>
                                     <div class="testimonial-text clearfix">
                                         <div class="testimonial-paragraph">
                                             <span class="fa fa-quote-left text-primary"></span>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                                  when an unknown printer took a galley of type and specimen book.
+                                            <p>{{ $testimonial->quote }}
                                             </p>
                                         </div>
                                         <div class="testimonial-detail clearfix">
-                                            <strong class="testimonial-name">RINDRA RAKOTOARISOA</strong>
-                                            <span class="testimonial-position text-primary p-t10">Une cliente satisfaite</span>
+                                            <strong class="testimonial-name">{{ $testimonial->name }}</strong>
+                                            <span class="testimonial-position text-primary p-t10">{{ $testimonial->title }}</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class=" testimonial-5 bg-white radius-sm">
-                                	<div class="testimonial-pic-block radius-bx"> 
-                                    	<div class="testimonial-pic radius">
-                                        	<img src="images/testimonials/pic2.jpg" width="132" height="132" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-text clearfix">
-                                        <div class="testimonial-paragraph">
-                                            <span class="fa fa-quote-left text-primary"></span>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                                  when an unknown printer took a galley of type and specimen book.
-                                            </p>
-                                        </div>
-                                        <div class="testimonial-detail clearfix">
-                                            <strong class="testimonial-name">Agustina</strong>
-                                            <span class="testimonial-position text-primary p-t10">Spa Experts</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="testimonial-5 bg-white radius-sm">
-                                	<div class="testimonial-pic-block radius-bx"> 
-                                    	<div class="testimonial-pic radius">
-                                        	<img src="images/testimonials/pic1.jpg" width="132" height="132" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-text clearfix">
-                                    <div class="testimonial-paragraph">
-                                        <span class="fa fa-quote-left text-primary"></span>
-                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                              when an unknown printer took a galley of type and specimen book.
-                                        </p>
-                                    </div>
-                                    <div class="testimonial-detail clearfix">
-                                        <strong class="testimonial-name">RINDA SMITH</strong>
-                                        <span class="testimonial-position text-primary p-t10">Founder</span>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="testimonial-5 bg-white radius-sm">
-                                	<div class="testimonial-pic-block radius-bx"> 
-                                    	<div class="testimonial-pic radius">
-                                        	<img src="images/testimonials/pic2.jpg" width="132" height="132" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-text clearfix">
-                                        <div class="testimonial-paragraph">
-                                            <span class="fa fa-quote-left text-primary"></span>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                                  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                                  when an unknown printer took a galley of type and specimen book.
-                                            </p>
-                                        </div>
-                                        <div class="testimonial-detail clearfix">
-                                            <strong class="testimonial-name">RINDA SMITH</strong>
-                                            <span class="testimonial-position text-primary p-t10">Founder</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                          @endforeach
                         </div>
+                        @endisset
                     </div>
                 </div>
             </div>

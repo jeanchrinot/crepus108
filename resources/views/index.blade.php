@@ -36,6 +36,6 @@
             <!-- include contact us -->
             @include('include.contactus')
                        
-            @include('include.ourclientslider')
+            @include('include.brands')
 
 @endsection

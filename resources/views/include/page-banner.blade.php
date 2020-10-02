@@ -3,7 +3,9 @@
     <div class="overlay-main bg-black opacity-07"></div>
     <div class="container">
         <div class="wt-bnr-inr-entry">
-            <h1 class="text-white">Services</h1>/<h2>Tresses</h2>
+            <div style="display: flex;">
+            	<h2 style="color:#fff">{{ $page_banner[0] }} {{$page_banner[1] ? '/':''}} {{ $page_banner[1] ?? '' }}</h2>
+            </div>
         </div>
     </div>
 </div>

@@ -304,6 +304,9 @@ ol.list-num-count.list-outline > li::before,
 .text-secondry {
 	color:#4b3941;
 }
+.slider .text-secondry{
+	color:#fff;
+}
 /* Secondery hex background color*/
 .bg-secondry {
 	background-color:#4b3941;

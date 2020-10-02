@@ -11,10 +11,7 @@
                             </div>                            
                         </div>
                         
-                        <p class="font-16"><strong>
-                        CREPUS 108 ou CREPUS "Valo ambiny zato", est une coiffeuse a domicile spécialisée pour l'entretien des cheveux naturels (crépu, bouclés, frisés, lisses).
-                          </strong>
-                        </p>
+                        <p class="font-16"><strong> {{ $about->about_short ?? '' }} </strong></p>
                         
                     </div>
                     <div class="section-content text-center about-spa">
@@ -36,7 +33,7 @@
                                         <span class="icon-cell text-white"><span class="flaticon-scissors"></span></span>
                                     </div>
                                     <div class="icon-content">
-                                        <h4 class="wt-tilte font-weight-500">Soins naturels</h4>
+                                        <h4 class="wt-tilte font-weight-500">Coiffure</h4>
                                         <p class="text-secondry">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                                     </div>
                                 </div>
@@ -47,7 +44,7 @@
                                         <span class="icon-cell text-white"><span class="flaticon-shaving"></span></span>
                                     </div>
                                     <div class="icon-content">
-                                        <h4 class="wt-tilte font-weight-500">Coiffure</h4>
+                                        <h4 class="wt-tilte font-weight-500">Soins naturels</h4>
                                         <p class="text-secondry">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                                     </div>
                                 </div>
@@ -55,7 +52,7 @@
                         </div>
                         <div>
                             <a href="#pricing" class="m-b15 site-button text-uppercase radius-sm m-lr15 font-weight-700 button-lg" >Voir nos tarifs</a>
-                            <a class="m-b15 site-button-secondry text-uppercase radius-sm m-lr15 font-weight-700 button-lg">Plus de détails</a>
+                            <a href="{{ route('service.index') }}" class="m-b15 site-button-secondry text-uppercase radius-sm m-lr15 font-weight-700 button-lg">Nos services</a>
                         </div>
                     </div>
                 </div>

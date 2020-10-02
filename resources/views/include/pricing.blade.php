@@ -65,10 +65,13 @@
                                                         <div class="col-md-6">
                                                             <div class="wt-tilte">
                                                                 <h3 class="font-26 p-b20 font-weight-400">{{ $service->name }}</h3>
-                                                                <h4 class="text-primary">Ar {{ $service->price }}</h4>
+                                                                <div style="display: flex;">
+                                                                    <h4 class="text-primary" style="margin-right: 40px;">Ar {{ $service->price }}</h4>
+                                                                    <h4 class="text-primary">{{ $service->duration }} min.</h4>
+                                                                </div>
                                                                 <p>{{ $service->details }}
                                                                 </p>
-                                                                <a href="#" class="site-button skew-icon-btn radius-sm">
+                                                                <a href="{{ route('service.reservation') }}" class="site-button skew-icon-btn radius-sm">
                                                                   <span class="font-weight-700 inline-block text-uppercase p-lr15">Réserver</span> 
                                                                 </a>
                                                             </div>

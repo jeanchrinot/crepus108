@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contact;
 
 class ContactController extends Controller
 {
     public function index()
     {
-    	// show contact us form
-    	return view('contact');
+    	// get contact
+    	$contact = Contact::find(1);
+
+    	// show contact us page
+    	return view('contact',compact('contact'));
     }
 }

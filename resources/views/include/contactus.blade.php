@@ -20,14 +20,14 @@
                         	<div class="col-md-4 col-sm-6 contact-home-left bg-no-repeat bg-primary bg-left-center"  style="background-image:url(images/background/contact-map.png);">
                             	<div class="section-content">
                                 	<div class="p-a50">
-                                    	
+                                    	@isset($contact)
                                         <div class="wt-icon-box-wraper left p-b20 text-white">
                                             <span class="icon-lg">
                                                 <span class="flaticon-placeholder"></span>
                                             </span>
                                             <div class="icon-content">
                                                 <h4 class="m-b5">Adresse</h4>
-                                                <span class="font-12">295 Madison Ave, 12th Floor New York, NY 10017</span>
+                                                <span class="font-12">{{ $contact->address }}</span>
                                             </div>
                                         </div>
                                         
@@ -37,8 +37,8 @@
                                             </span>
                                             <div class="icon-content">
                                                 <h4 class="m-b5">Email</h4>
-                                                <span class="font-12">info @example.com </span><br>
-                                                <span class="font-12">info2 @example.com </span>
+                                                <span class="font-12">{{ $contact->email ?? '' }} </span><br>
+                                                <span class="font-12">{{ $contact->email2 ?? '' }}</span>
                                             </div>
                                         </div>
                                         
@@ -48,10 +48,11 @@
                                             </span>
                                             <div class="icon-content">
                                                 <h4 class="m-b5">Téléphone</h4>
-                                                <span class="font-12">+77 634 545 144 </span><br>
-                                                <span class="font-12">+77 634 255 147 </span>
+                                                <span class="font-12">{{ $contact->phone ?? '' }} </span><br>
+                                                <span class="font-12">{{ $contact->phone2 ?? '' }} </span>
                                             </div>
                                         </div>
+                                        @endisset
 
                                         <div class="Opening-hours text-white">
                                             <h3 class="wt-title text-uppercase m-t0">Horaire</h3>
@@ -86,6 +87,12 @@
                                                 <div class="input-group">
                                                     <span class="input-group-addon"><i class="fa fa-book"></i></span>
                                                     <input name="phone" type="text" class="form-control" required placeholder="Téléphone">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                                    <input name="subject" type="text" required class="form-control" placeholder="Sujet">
                                                 </div>
                                             </div>
                                             <div class="form-group">
