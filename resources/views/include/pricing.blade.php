@@ -71,7 +71,7 @@
                                                                 </div>
                                                                 <p>{{ $service->details }}
                                                                 </p>
-                                                                <a href="{{ route('service.reservation') }}" class="site-button skew-icon-btn radius-sm">
+                                                                <a href="{{ route('service.reservation',['service'=>$service->id]) }}" class="site-button skew-icon-btn radius-sm">
                                                                   <span class="font-weight-700 inline-block text-uppercase p-lr15">Réserver</span> 
                                                                 </a>
                                                             </div>

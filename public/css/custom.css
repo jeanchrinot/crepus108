@@ -1,3 +1,37 @@
 /*===================================== 
-YOU CAN WRIGHT CUSTOME CSS 
+CUSTOM CSS 
 ======================================*/
+
+/*** ERROR STYLES ***/
+.error{
+	color:#dd4545!important;
+}
+.error-list{
+	display: block;
+	margin:auto;
+	width: 80%;
+}
+.error-list .error-item{
+	color:#dc3545!important;
+}
+/*-- END ERROR STYLES --*/
+
+/** MODAL STYLES **/
+
+.modal-header--success{
+
+}
+.modal-header--error{
+	background-color: #dc3545!important;
+}
+
+/** END MODAL STYLES **/
+
+/** GENERAL  **/
+
+.cancel-btn{
+	display: none;
+}
+.modal .cancel-btn{
+	display: block;
+}

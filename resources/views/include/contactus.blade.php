@@ -67,46 +67,7 @@
                                 </div>                               
                             </div>
                             <div class="col-md-8 col-sm-6">
-                            	<div class="section-content bg-gray">
-                                      <div class="contact-home-right p-a30">
-                                      	<h5 class="text-uppercase font-26 p-b20 font-weight-400">Envoyez-nous un bonjour :)</h5>
-                                      	<form  class="cons-contact-form2" method="post" action="http://thewebmax.com/spa/form-handler2.php">
-                                        	<div class="form-group">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                                    <input name="username" type="text" required class="form-control" placeholder="Nom">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                                    <input name="email" type="text" class="form-control" required placeholder="Email">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon"><i class="fa fa-book"></i></span>
-                                                    <input name="phone" type="text" class="form-control" required placeholder="Téléphone">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                                    <input name="subject" type="text" required class="form-control" placeholder="Sujet">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon v-align-t"><i class="fa fa-pencil"></i></span>
-                                                    <textarea name="message" class="form-control" rows="4" placeholder="Message"></textarea>
-                                                </div>
-                                            </div>
-                                            <button type="submit" class="site-button skew-icon-btn radius-sm">
-                                              <span class="font-weight-700 inline-block text-uppercase p-lr15">Envoyer</span> 
-                                            </button>
-                                        </form>
-                                      </div>                             
-                                </div>
+                            	<contact-form></contact-form>
                             </div>
                         </div>
                     

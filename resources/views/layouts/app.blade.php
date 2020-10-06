@@ -64,7 +64,7 @@
 
 <body id="bg">
  
-	<div class="page-wraper"> 
+	<div id="app" class="page-wraper"> 
        	
        <!-- Inlcude Head -->
        @include('include.header')
@@ -89,6 +89,8 @@
 
 <!-- Include Loading Area -->
 @include('include.loading')
+
+ <script src="{{ asset('js/app.js') }}"></script>
 <!-- JAVASCRIPT  FILES ========================================= --> 
 <script   src="/js/jquery-1.12.4.min.js"></script><!-- JQUERY.MIN JS -->
 <script   src="/js/bootstrap.min.js"></script><!-- BOOTSTRAP.MIN JS -->

@@ -60,16 +60,7 @@
                         <div class="col-md-4 col-sm-12">
                             <div class="widget widget_newsletter">
                                 <h4 class="widget-title">Newsletter</h4>
-                                <div class="newsletter-bx">
-                                    <form role="search" method="post">
-                                        <div class="input-group">
-                                        <input name="news-letter" class="form-control" placeholder="Votre addresse email" type="text">
-                                        <span class="input-group-btn">
-                                            <button type="submit" class="site-button"><i class="fa fa-paper-plane-o"></i></button>
-                                        </span>
-                                    </div>
-                                     </form>
-                                </div>
+                                <newsletter-form></newsletter-form>
                             </div>
                             <!-- SOCIAL LINKS -->
                             <div class="widget widget_social_inks">

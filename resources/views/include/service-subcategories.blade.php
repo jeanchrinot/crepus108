@@ -82,7 +82,7 @@
                                                                 <!-- <a href="#" class="site-button skew-icon-btn radius-sm">
                                                                   <span class="font-weight-700 inline-block text-uppercase p-lr15">Réserver</span> 
                                                                 </a> -->
-                                                                <button type="button" class="site-button " data-toggle="modal" data-target="#with-form">Réserver <i class="fa fa-angle-double-right"></i></button>
+                                                                <open-reservation-modal-button :item-id="{{ $service->id }}"></open-reservation-modal-button>
                                                             </div>
                                                         </div>
                                                     </div>

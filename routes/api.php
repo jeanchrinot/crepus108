@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::group([
+    'prefix' => 'contact','namespace' => 'Api'
+], function () {
+    Route::get('test', [ContactController::class,'test']);
+
+    // Route for storing contact messages
+    Route::post('/', [ContactController::class,'store']);
+    // Route for reservation
+    Route::post('/reservation', [ContactController::class,'reservation']); 
+    // Route for newsletter
+    Route::post('/newsletter', [ContactController::class,'newsletter']); 
 });
