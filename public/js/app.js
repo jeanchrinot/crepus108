@@ -35138,17 +35138,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -35508,15 +35497,26 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/panel/css/app.css":
+/*!*************************************!*\
+  !*** ./resources/panel/css/app.css ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/src/index.js):\nError: ENOENT: no such file or directory, open 'E:\\crepus108\\laravel\\resources\\panel\\css\\app.css'\n    at E:\\crepus108\\laravel\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at E:\\crepus108\\laravel\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at E:\\crepus108\\laravel\\node_modules\\loader-runner\\lib\\LoaderRunner.js:203:19\n    at E:\\crepus108\\laravel\\node_modules\\enhanced-resolve\\lib\\CachedInputFileSystem.js:85:15\n    at processTicksAndRejections (internal/process/task_queues.js:79:11)");
+
+/***/ }),
+
 /***/ 0:
-/*!***********************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/css/app.css ***!
-  \***********************************************************/
+/*!*****************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/panel/css/app.css ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! E:\crepus108\laravel\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\crepus108\laravel\resources\css\app.css */"./resources/css/app.css");
+module.exports = __webpack_require__(/*! E:\crepus108\laravel\resources\panel\css\app.css */"./resources/panel/css/app.css");
 
 
 /***/ })
