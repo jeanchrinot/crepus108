@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
+use Illuminate\Support\Facades\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,26 @@ Route::get('/conditions',[ServiceController::class, 'condition'])->name('service
 
 // Contact Routes
 Route::get('/contact',[ContactController::class, 'index'])->name('contact.index');
+
+Route::get('/test',function()
+	{
+		return view('test');
+	});
+
+// Admin panel routes 
+Route::group(array('prefix' => 'panel','namespace'=>'panel'), function()
+{
+	Route::get('/',function()
+	{
+		return view('panel.auth.login');
+	});
+	Route::get('/login',function()
+	{
+		return view('panel.auth.login');
+	});
+	Route::get('/{any}',function()
+	{
+		return view('panel.dashboard');
+	})->where('any','.*');
+});
+

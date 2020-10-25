@@ -67,7 +67,7 @@
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="wt-media">
-                                                                <img src="/images/our-services/large/s1.jpg" alt="">
+                                                                <img src="{{ getImage($service->image) }}" alt="">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">

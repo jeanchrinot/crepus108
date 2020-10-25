@@ -1,0 +1,21 @@
+.actions{
+	display: block;
+	div{
+		float: left;
+		margin-right: 10px;
+	}
+
+	&__btn{
+		cursor: pointer;
+	}
+}
+
+.danger-item{
+	color: $red;
+}
+.info-item{
+	color: $blue;
+}
+.success-item{
+	color: $green;
+}

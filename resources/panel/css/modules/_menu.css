@@ -1,0 +1,25 @@
+.dropdown-menu {
+	&-right{
+		.dropdown-item i{
+			margin-right: 7px;
+    		margin-top: -1px;
+		}
+	}
+}
+
+.navbar-light .navbar-brand {
+    font-weight: bold;
+    margin-left: 1.5rem;
+}
+
+.app-header__logo .logo-src {
+    height: auto;
+    width: 97px;
+    background: unset;
+
+    .navbar-brand{
+    	color: #333;
+	    font-weight: bold;
+	    margin-left: 10px;
+    }
+}

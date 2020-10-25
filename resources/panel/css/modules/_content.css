@@ -1,0 +1,15 @@
+.section-content{
+	&--terms{
+	    line-height: 3rem;
+	    
+	}
+	&--centered{
+		justify-content: center;
+	    width: 100%;
+	    margin: auto;
+
+	    @mixin atMedium{
+	    	width: 80%;
+	    }
+	}
+}

@@ -9,6 +9,8 @@ class Servicesubcategory extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['name','slug','status','details','image'];
+
     public function servicecategory()
     {
     	return $this->belongsTo('\App\Models\Servicecategory');
