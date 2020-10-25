@@ -22,7 +22,7 @@
                                 <div class="testimonial-5 bg-white radius-sm">
                                 	<div class="testimonial-pic-block radius-bx"> 
                                     	<div class="testimonial-pic radius">
-                                        	<img src="images/testimonials/{{ $testimonial->image }}" width="132" height="132" alt="">
+                                        	<img src="{{ getUserImage($testimonial->image) }}" width="132" height="132" alt="">
                                         </div>
                                     </div>
                                     <div class="testimonial-text clearfix">

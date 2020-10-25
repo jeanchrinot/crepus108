@@ -3,6 +3,7 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import Vuelidate from 'vuelidate';
+import 'vue2-timepicker/dist/VueTimepicker.css';
 
 axios.defaults.headers.post['content-type'] = 'application/json'; // for POST requests
 axios.defaults.headers.post['X-Requested-With'] = 'XMLHttpRequest'; // for POST requests

@@ -1,0 +1,81 @@
+  html, body {
+                background-color: #fff;
+                color: #636b6f;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 200;
+                margin: 0;
+            }
+
+h1{
+    font-size: 1.5em;
+    margin: 0.2em 0;
+}
+
+.error{
+    color:#dd4545!important;
+}
+
+.pd-0{
+    padding: 0!important;
+}
+.sm-pd{
+    padding: 8px 20px!important;
+}
+.dark-bg{
+    background-color: #ccc;
+}
+.white-bg{
+    background-color: #fff;
+}
+.no-padding{
+    padding:0!important;
+}
+
+/***** COLORS ******/
+.color-green{
+    color:$tsk-green!important;
+}
+.color-red{
+    color:$tsk-red!important;
+}
+.color-yellow{
+    color:$tsk-yellow!important;
+}
+.color-blue{
+    color:$tsk-blue!important;
+}
+
+/***** BACKGROUNDS *****/
+
+.bg-green{
+    background-color:$tsk-green!important;
+}
+.bg-red{
+    background-color:$tsk-red!important;
+}
+.bg-yellow{
+    background-color:$tsk-yellow!important;
+}
+.bg-blue{
+    background-color:$tsk-blue!important;
+}
+
+/******* ********/
+
+*{
+    box-sizing: border-box;
+}
+
+/*a{
+        color:$tsk-black;
+        font-size: 1rem;
+        font-weight: 400;
+        transition: all 0.5s ease 0s;
+        position: relative;
+        font-weight: 700;
+        text-decoration: none;
+        &:hover{
+            text-decoration:none;
+            color: $tsk-green;
+        }
+}*/

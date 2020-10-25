@@ -12,7 +12,7 @@
                    <div class="container">
                         <!-- TITLE START-->
                         <div class="section-head text-center">
-                            <h1 class="text-uppercase">Conditions de services</h1>
+                            <h1 class="text-uppercase">{{ $condition->title ?? 'Conditions de Services' }}</h1>
                             <div class="wt-separator-outer">
                                 <div class="wt-separator style-icon">
                                     <i class="fa fa-leaf text-black"></i>
@@ -23,31 +23,11 @@
                             <p>Veuillez lire attentivement les conditions d'utilisations de nos services.</p>
                         </div>
                         <!-- TITLE END-->
-                        <div class="section-content">
+                        <div class="section-content section-content--centered section-content--terms">
 
-
-                            <ol type="i" class="m-l15 list-simple">
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                                <li>Corem ipsum dolor sit amet</li>
-                                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                                <li>Eorem ipsum dolor sit amet</li>
-                            </ol>
-
-                           <!--  <form class="form-horizontal mb-lg" novalidate>
-                                <div class="form-group">
-                                    <div class="col-sm-12 col-md-8">
-                                        <input name="condition" id="condition" class="form-control" type="checkbox">
-                                        <label for="condition">J'ai lu et compris les conditions d'utilisations.</label>
-                                    </div>
-                                    <div class="col-sm-12 col-md-4">
-                                        <button type="button" class="site-button pull-right">Sauvegarder
-                                            <i class="fa fa fa-check"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form> -->
+                            <div class="wrapper wrapper--medium">
+                                {!! $condition->conditions ?? '' !!}
+                            </div>
 
                         </div>
                     </div> 

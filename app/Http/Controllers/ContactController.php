@@ -10,6 +10,7 @@ use App\Models\Contactmessage;
 use App\Models\Reservation;
 use App\Models\Newsletter;
 use App\Http\Resources\Contact as ContactResource;
+use Illuminate\Support\Carbon;
 
 class ContactController extends Controller
 {
@@ -59,7 +60,7 @@ class ContactController extends Controller
 
      public function reservation(Request $request)
     {
-        // Store contact us form data
+        // Store reservation form data
 
         $data = (array) $request['body'];
 
@@ -69,7 +70,8 @@ class ContactController extends Controller
             'email'=> ['nullable','email','regex:/^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$/'],
             'phone'=> ['required','regex:/^(\+|00){0,1}[0-9]{0,3}(\({1}[0-9]{1,3}\){1}){0,1}[0-9]{1,18}$/'],
             'service'=> 'required|numeric',
-            'reservation_date'=>'required|date',
+            'rs_date'=>'required|date',
+            'rs_time'=>'required|date_format:H:i',
             'note'=>''
         ]);
 
@@ -80,10 +82,30 @@ class ContactController extends Controller
 
         }else{
 
+            // Check if date and time is available
+
+            $rs = Reservation::where(['rs_date'=>$data['rs_date'],'rs_time'=>$data['rs_time']])->count();
+
+            if ($rs>0) {
+                // Date and time not available
+
+                $errors = new MessageBag;
+                $errors->add('error','La <<date et heure>> choisie n\'est pas disponible.');
+
+                return $errors->toJson();
+            }
+
             Reservation::create($data);
 
             return new ContactResource(['success'=>'true']);
         }
+    }
+
+    public function getRS()
+    {
+        $rs = Reservation::where('status','<=',1)->where('rs_date', '>', Carbon::now())->get(['id','rs_date','rs_time']);
+
+        return ContactResource::collection($rs);
     }
 
       public function newsletter(Request $request)

@@ -3,7 +3,7 @@
     <div class="container">
         <ul class="wt-breadcrumb breadcrumb-style-2">
             <li><a href="javascript:void(0);"><i class="fa fa-home"></i> Accueil</a></li>
-            <li>Services</li>
+            <li>{{ $breadcrumb ?? '' }}</li>
         </ul>
     </div>
 </div>

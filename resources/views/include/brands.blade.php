@@ -25,7 +25,7 @@
                             <div class="item">
                                 <div class="ow-client-logo">
                                     <div class="client-logo wt-img-effect on-color">
-                                        <a href="javascript:;"><img src="images/client-logo/{{ $brand->logo }}" alt="{{ $brand->name }}"></a>
+                                        <a href="javascript:;"><img src="{{ getImage($brand->logo) }}" alt="{{ $brand->name }}"></a>
                                     </div>
                                 </div>
                             </div>                      

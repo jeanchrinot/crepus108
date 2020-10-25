@@ -36,9 +36,17 @@
         </div>
         <div class="form-group">
             <label class="col-sm-3 control-label">Date et heure</label>
-            <div class="col-sm-9">
+            <!-- <div class="col-sm-9">
                 <input v-model="reservation.reservation_date" name="reservation_date" class="form-control" type="datetime-local">
                 <div class="error" v-if="submitTry && !$v.reservation.reservation_date.required">Ce champ est réquis.</div>
+            </div> -->
+            <div class="col-sm-9 col-md-3">
+            	<datepicker :language="fr" :disabled-dates="rsDisabledDates" :format="'yyyy MM dd'" v-model="reservation.rs_date" name="rs_date" input-class="'form-control'" @closed="filterTimes"></datepicker>
+            	<div class="error" v-if="submitTry && !$v.reservation.rs_date.required">Ce champ est réquis.</div>
+            </div>
+            <div class="col-sm-9 col-md-3">
+            	<vue-timepicker :minute-interval="0" :minute-range="[0]" :hour-range="hour_range" v-model="reservation.rs_time" hide-disabled-hours></vue-timepicker>
+            	<div class="error" v-if="submitTry && !$v.reservation.rs_time.required">Ce champ est réquis.</div>
             </div>
             
         </div>
@@ -81,18 +89,31 @@
 
 	import { required, minLength} from 'vuelidate/lib/validators';
 
+	import Datepicker from 'vuejs-datepicker';
+	import { fr } from 'vuejs-datepicker/dist/locale';
+
+	import VueTimepicker from 'vue2-timepicker';
+
 	export default{
+		components: {
+		    Datepicker,
+		    VueTimepicker
+		},
 		props:['services'],
 		data(){
 			return{
+				fr: fr,
 				reservation:{
 					name:'',
 					email:'',
 					phone:'',
 					service:'',
-					reservation_date:'',
+					rs_date:'',
+					rs_time:'',
 					note:''
 				},
+				reservations:[],
+				hour_range:[9,10,11,13,14,15,16],
 				condition:[],
 				submitStatus:null,
 				submitTry:false,
@@ -103,15 +124,21 @@
 			}
 		},
 		mounted(){
-			console.log("Reservation form component mounted");
+			
 		},
 		created(){
 			EventBus.$on('service-select', data => {
                   this.selectService(data);
                 });
+			this.getReservations();
 			this.parseServiceObjects();
 			this.selectService();
 			// EventBus.$emit('form-ready','Ready');
+		},
+		computed:{
+			rsDisabledDates:function () {
+				return this.setDisabledDates();
+			}
 		},
 		validations:{
 			reservation:{
@@ -124,7 +151,10 @@
 				service:{
 					required
 				},
-				reservation_date:{
+				rs_time:{
+					required
+				},
+				rs_date:{
 					required
 				},
 				note:{
@@ -147,10 +177,18 @@
 			      if (this.$v.$invalid) {
 			        this.submitStatus = 'ERROR'
 			      } else {
+
+
 			        // fields are valid
 			        this.submitStatus = 'PENDING'
 
+			       	const rs_date = this.getRSDate();
+
 			        let data = this.reservation;
+			        	data.rs_date = rs_date;
+			        	
+
+			        // console.log('value in data='+data.rs_date);
 
 					axios.post('/api/contact/reservation',{
 						body:data
@@ -161,6 +199,7 @@
 
 						response = response.data;
 						if (response.data) {
+
 							this.submitError = false;
 							console.log(response.data);
 							this.submitStatus = 'OK';
@@ -194,7 +233,8 @@
 				this.reservation.email = '';
 				this.reservation.phone = '';
 				this.reservation.service = '';
-				this.reservation.reservation_date ='';
+				this.reservation.rs_date ='';
+				this.reservation.rs_time = '',
 				this.reservation.note = '';
 				this.condition = false;
 			},
@@ -217,21 +257,116 @@
 					}
 				}
 			},
+			setDisabledDates(){
+
+					let busyDays = [];
+					let temp,date;
+					let disabledDates;
+					let validHours = [9,10,11,13,14,15,16];
+
+					this.reservations.forEach((element, index) => {
+
+							if (!this.checkDateAvailable(element.rs_date)) {
+								date = new Date(element.rs_date);
+								// temp = parseInt(temp[0]);
+								busyDays.push(date);
+							}
+							
+					});
+
+					disabledDates = {
+		    				to: new Date(),
+		    				days: [0],
+		    				dates: busyDays
+						}
+
+					return disabledDates;
+
+			
+					// set Today
+					// let today = new Date();
+					// const tomorrow = new Date(today)
+					// tomorrow.setDate(tomorrow.getDate() + 1)
+					// const date = (tomorrow.getMonth()+1)+'-'+tomorrow.getDate()+'-'+tomorrow.getFullYear();
+					// this.reservation.rs_date = date;
+			},
+			getRSDate(){
+				// Need to change date format to YYYY-MM-DD
+			        let dateStr = this.reservation.rs_date+'';
+
+			        let myDate = new Date(dateStr);
+			            myDate = myDate.toLocaleString('fr-FR');
+						myDate = myDate.split(' ');
+						myDate = myDate[0];
+						myDate = myDate.split('/');
+						myDate = myDate[2]+'-'+myDate[1]+'-'+myDate[0];
+			      	
+			      	// this.reservation.rs_date = myDate;
+
+			      	return myDate;
+			},
 			serviceExist(id){
 				return this.all_services.some(el=> {
 			    return el.id === id;
 			  }); 
 			},
-			test(){
-
-				axios.get('/api/contact/test')
+			getReservations(){
+				axios.get('/api/contact/reservation')
 					.then(response=>{
-						let res = response.data;
-						console.log(res.data);
+						response = response.data;
+
+						if (response.data) {
+							// Success
+							this.reservations = response.data;
+							
+						}
+						else{
+							console.log(response);
+							// Could not get data
+						}
+
 					})
-					.catch(err=>{
-						console.log(err);
+			},
+			filterTimes(){
+				let selectedDate = this.getRSDate();
+				let validHours = [9,10,11,13,14,15,16];
+				let takenHours = [];
+				let temp;
+
+					this.reservations.forEach((element, index) => {
+						if (element.rs_date==selectedDate) {
+							temp = element.rs_time;
+							temp = temp.split(':');
+							temp = parseInt(temp[0]);
+							takenHours.push(temp);
+						}
 					});
+
+				this.hour_range = validHours.filter(function(item)
+				{
+				    return !(takenHours.includes(item))
+				});
+			},
+			checkDateAvailable(date){
+	
+				let count = 0;
+
+					this.reservations.forEach((element, index) => {
+						if (element.rs_date==date) {
+							count++;
+						}
+					});
+
+					if (count>=7) {
+						return false;
+					}
+
+					return true;
+
+			},
+			test(){
+				
+				console.log('value after selected='+this.reservation.rs_date);
 			}
 		}
 	}

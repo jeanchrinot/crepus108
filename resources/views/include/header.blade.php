@@ -129,13 +129,19 @@
                         </div> -->
                         
                         <!-- MAIN Vav -->
+
+                        @php
+
+                            $url = $_SERVER['REQUEST_URI']; //returns the current URL
+                            $parts = explode('/',$url);
+
+                        @endphp
                         <div class="header-nav navbar-collapse collapse ">
                             <ul class=" nav navbar-nav">
-                                <li class="active">
+                                <li class="{{ $parts[1]=='' ? 'active':'' }}">
                                     <a href="{{ route('home') }}">Accueil</a>
                                 </li>
-                            
-                                <li>
+                                <li class="{{ $parts[1]=='services' ? 'active':'' }}">
                                     <a href="{{ route('service.index') }}">Services<i class="fa fa-chevron-down"></i></a>
                                     @isset($menu_service_categories)
                                     <ul class="sub-menu">
@@ -155,10 +161,10 @@
                                 <!-- <li>
                                     <a href="javascript:;">Shop</a>
                                 </li> -->
-                                <li>
+                                <li class="{{ $parts[1]=='reservation' ? 'active':'' }}">
                                     <a href="{{ route('service.reservation') }}">Réservation</a>
                                 </li>
-                                <li>
+                                <li class="{{ $parts[1]=='contact' ? 'active':'' }}">
                                     <a href="{{ route('contact.index') }}">Contact</a>
                                 </li>
                             

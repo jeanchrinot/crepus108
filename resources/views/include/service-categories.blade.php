@@ -27,7 +27,7 @@
                             <div class="masonry-item cat-1 col-lg-6 col-md-6 col-sm-6">
                                 <div class="wt-box p-a15">
                                     <div class="wt-thum-bx wt-img-effect zoom">
-                                        <img src="images/portfolio/pic1.jpg" alt="">
+                                        <img src="{{ getImage($category->image) }}" alt="">
                                         <div class="wt-info-has p-a20 bg-white ">
                                             <div class="wt-info p-b10">
                                                 <h4 class="m-a0">{{ $category->name }}</h4>

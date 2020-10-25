@@ -1,0 +1,106 @@
+.todo-list{
+	list-style: none;
+	padding:0;
+	li{
+		width: 100%;
+		margin:0 10px;
+		
+		.list-item{
+			width: 82%;
+			padding: 5px;
+		    border-radius: 0;
+		    background-color: #fff;
+		    transition: all 0.5s ease;
+		    float: left;
+		    @mixin atSmall{
+		    	width: 85%;
+		    }
+		    @mixin atMedium{
+		    	width: 90%;
+		    }
+		}
+
+		.list-action{
+			display: flex;
+		    width: 10%;
+		    float: left;
+		    padding: 5px 5px;
+		}
+
+    	&:hover .list-item{
+    		background-color: #eee;
+    		border-radius: 5px;
+    	}
+
+    	&.current .list-item{
+    		background-color: #eee;
+    		border-radius: 5px;
+    	}
+	}
+	.list-style{
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		border-radius: 5px;
+		background-color: $tsk-yellow;
+		margin-right: 10px;
+		&--warning{
+			background-color: #ffc107;
+		}
+		&--info{
+			background-color: #17a2b8;
+		}
+		&--danger{
+			background-color: #dc3545;
+		}
+		&--success{
+			background-color: #28a745;
+		}
+		&--light{
+			background-color: #f8f9fa;
+		}
+
+	}
+	&__item-checked{
+		text-decoration: line-through;
+		font-style: italic;
+	}
+}
+
+.list-label{
+	display: inline-block;
+	width: 100%;
+	margin:0;
+	margin-bottom: 0;
+}
+
+.task-name{
+	float: left;
+    display: inline-block;
+    padding: 10px 0;
+}
+.task-title{
+	display: block;
+    float: left;
+    padding: 10px 10px;
+    width: 100%;
+}
+.task-date{
+	font-size: 13px;
+    float: right;
+    position: absolute;
+    right: 20px;
+    top: 14px;
+}
+
+.task-list{
+	float: left;
+	width: 100%;
+}
+
+.add-task-btn{
+	float: right;
+    right: 20px;
+    position: absolute;
+    top: 0px;
+}
