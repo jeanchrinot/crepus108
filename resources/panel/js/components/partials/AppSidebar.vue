@@ -86,7 +86,7 @@
 	                        </li>
 	                    </ul>
 	                </li>
-	                <li>
+	                <!-- <li>
 	                    <a href="#">
 	                        <i class="metismenu-icon pe-7s-photo"></i>
 	                        Galerie Photos
@@ -127,7 +127,7 @@
 	                            </a>
 	                        </li>
 	                    </ul>
-	                </li>
+	                </li> -->
 	                <li class="app-sidebar__heading">Composants</li>
 	                <li>
 	                    <router-link :to="{name:'sliders'}">

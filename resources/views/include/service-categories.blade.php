@@ -26,7 +26,7 @@
                             @foreach($service_categories as $category)
                             <div class="masonry-item cat-1 col-lg-6 col-md-6 col-sm-6">
                                 <div class="wt-box p-a15">
-                                    <div class="wt-thum-bx wt-img-effect zoom">
+                                    <div class="wt-thum-bx wt-img-effect zoom fixed-size-img">
                                         <img src="{{ getImage($category->image) }}" alt="">
                                         <div class="wt-info-has p-a20 bg-white ">
                                             <div class="wt-info p-b10">

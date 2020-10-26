@@ -9,76 +9,34 @@
 	    </div>            
 	            
 	    <div class="row">
-	        <div class="col-md-6 col-xl-4">
+	    	<div class="col-12">
+	    		<h2 class="card-title">Messages</h2>
+	    	</div>
+	        <div class="col-md-6">
 	            <div class="card mb-3 widget-content">
 	                <div class="widget-content-outer">
 	                    <div class="widget-content-wrapper">
 	                        <div class="widget-content-left">
-	                            <div class="widget-heading">Commandes</div>
-	                            <div class="widget-subheading">Nombre total de commandes</div>
+	                            <div class="widget-heading">Total</div>
+	                            <div class="widget-subheading">Messages</div>
 	                        </div>
 	                        <div class="widget-content-right">
-	                            <div class="widget-numbers text-success">1896</div>
+	                            <div class="widget-numbers text-info">{{ messages.total }}</div>
 	                        </div>
 	                    </div>
 	                </div>
 	            </div>
 	        </div>
-	        <div class="col-md-6 col-xl-4">
+	        <div class="col-md-6">
 	            <div class="card mb-3 widget-content">
 	                <div class="widget-content-outer">
 	                    <div class="widget-content-wrapper">
 	                        <div class="widget-content-left">
-	                            <div class="widget-heading">Soldes</div>
-	                            <!-- <div class="widget-subheading">Montant de produits vendus</div> -->
+	                            <div class="widget-heading">Non lus</div>
+	                            <div class="widget-subheading">Messages</div>
 	                        </div>
 	                        <div class="widget-content-right">
-	                            <div class="widget-numbers text-warning">Ar 200.000</div>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	        <div class="col-md-6 col-xl-4">
-	            <div class="card mb-3 widget-content">
-	                <div class="widget-content-outer">
-	                    <div class="widget-content-wrapper">
-	                        <div class="widget-content-left">
-	                            <div class="widget-heading">Clients</div>
-	                            <div class="widget-subheading">Clients inscrits</div>
-	                        </div>
-	                        <div class="widget-content-right">
-	                            <div class="widget-numbers text-danger">45</div>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	        <div class="col-md-6 col-xl-4">
-	            <div class="card mb-3 widget-content">
-	                <div class="widget-content-outer">
-	                    <div class="widget-content-wrapper">
-	                        <div class="widget-content-left">
-	                            <div class="widget-heading">Réservations</div>
-	                            <div class="widget-subheading">Nombre total de réservations</div>
-	                        </div>
-	                        <div class="widget-content-right">
-	                            <div class="widget-numbers text-danger">82</div>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	        <div class="col-md-6 col-xl-4">
-	            <div class="card mb-3 widget-content">
-	                <div class="widget-content-outer">
-	                    <div class="widget-content-wrapper">
-	                        <div class="widget-content-left">
-	                            <div class="widget-heading">Séances</div>
-	                            <div class="widget-subheading">Réservations éffectuées</div>
-	                        </div>
-	                        <div class="widget-content-right">
-	                            <div class="widget-numbers text-danger">90%</div>
+	                            <div class="widget-numbers text-warning">{{ messages.unviewed }}</div>
 	                        </div>
 	                    </div>
 	                </div>
@@ -86,6 +44,71 @@
 	        </div>
 	    </div>
 	    <div class="row">
+	    	<div class="col-12">
+	    		<h2 class="card-title">Réservations</h2>
+	    	</div>
+	        <div class="col-md-6">
+	            <div class="card mb-3 widget-content">
+	                <div class="widget-content-outer">
+	                    <div class="widget-content-wrapper">
+	                        <div class="widget-content-left">
+	                            <div class="widget-heading">Total</div>
+	                            <div class="widget-subheading">Réservations</div>
+	                        </div>
+	                        <div class="widget-content-right">
+	                            <div class="widget-numbers text-info">{{ reservations.total }}</div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-md-6">
+	            <div class="card mb-3 widget-content">
+	                <div class="widget-content-outer">
+	                    <div class="widget-content-wrapper">
+	                        <div class="widget-content-left">
+	                            <div class="widget-heading">En attente</div>
+	                            <div class="widget-subheading">Réservations</div>
+	                        </div>
+	                        <div class="widget-content-right">
+	                            <div class="widget-numbers text-primary">{{ reservations.pending }}</div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-md-6">
+	            <div class="card mb-3 widget-content">
+	                <div class="widget-content-outer">
+	                    <div class="widget-content-wrapper">
+	                        <div class="widget-content-left">
+	                            <div class="widget-heading">Terminé</div>
+	                            <div class="widget-subheading">Réservations</div>
+	                        </div>
+	                        <div class="widget-content-right">
+	                            <div class="widget-numbers text-success">{{ reservations.done }}</div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	        <div class="col-md-6">
+	            <div class="card mb-3 widget-content">
+	                <div class="widget-content-outer">
+	                    <div class="widget-content-wrapper">
+	                        <div class="widget-content-left">
+	                            <div class="widget-heading">Annulé</div>
+	                            <div class="widget-subheading">Réservations</div>
+	                        </div>
+	                        <div class="widget-content-right">
+	                            <div class="widget-numbers text-danger">{{ reservations.canceled }}</div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	    <!-- <div class="row">
 	        <div class="col-md-12 col-lg-6">
 	            <div class="mb-3 card">
 	                <div class="card-header-tab card-header-tab-animation card-header">
@@ -113,12 +136,36 @@
 	                </div>
 	            </div>
 	        </div>
-	    </div>
+	    </div> -->
 	</div>
 </template>
 
 <script>
 	export default{
-		name:'Stats'
+		name:'Stats',
+		data:()=>({
+			messages:{},
+			reservations:{}
+		}),
+		created(){
+			this.getStats();
+		},
+		methods:{
+			getStats(){
+				axios.get('/api/panel/stats')
+					.then(response=>{
+						response = response.data;
+						if (response.data) {
+							// Success
+							this.messages = response.data.messages;
+							this.reservations = response.data.reservations;
+							console.log(response.data);
+						}
+						else{
+							// Could not get stats
+						}
+					})
+			}
+		}
 	}
 </script>

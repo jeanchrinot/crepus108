@@ -15,6 +15,7 @@ use App\Http\Controllers\Api\TestimonialController;
 use App\Http\Controllers\Api\BrandController;
 use App\Http\Controllers\Api\SocialController;
 use App\Http\Controllers\Api\ConditionController;
+use App\Http\Controllers\Api\PanelController;
 
 /*
 |--------------------------------------------------------------------------
@@ -143,6 +144,10 @@ Route::group([
         Route::delete('condition/{id}',[SocialController::class,'destroy']);
         Route::post('condition',[ConditionController::class,'store']);
         Route::put('condition/{id}',[ConditionController::class,'update']);
+
+        // Panel Controller
+        // Get Statistics
+        Route::get('stats',[PanelController::class,'stats']);
         
     });
 });

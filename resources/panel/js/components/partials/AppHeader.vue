@@ -35,12 +35,12 @@
 	        <div class="app-header-left">
 	            <div class="search-wrapper">
 	                <div class="input-holder">
-	                    <input type="text" class="search-input" placeholder="Type to search">
+	                    <input type="text" class="search-input" placeholder="Recherche...">
 	                    <button class="search-icon"><span></span></button>
 	                </div>
 	                <button class="close"></button>
 	            </div>
-	            <ul class="header-menu nav">
+	            <!-- <ul class="header-menu nav">
 	                <li class="nav-item">
 	                    <a href="javascript:void(0);" class="nav-link">
 	                        <i class="nav-link-icon fa fa-database"> </i>
@@ -59,7 +59,8 @@
 	                        Settings
 	                    </a>
 	                </li>
-	            </ul>        </div>
+	            </ul>  -->       
+	        </div>
 	        <div class="app-header-right">
 	            <div class="header-btn-lg pr-0">
 	                <div class="widget-content p-0">
@@ -67,16 +68,16 @@
 	                        <div class="widget-content-left">
 	                            <div class="btn-group">
 	                                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-	                                    <img width="42" class="rounded-circle" src="/panel-assets/assets/images/avatars/1.jpg" alt="">
+	                                    <img width="42" class="rounded-circle" src="/panel-assets/assets/images/avatars/default.jpg" alt="">
 	                                    <i class="fa fa-angle-down ml-2 opacity-8"></i>
 	                                </a>
 	                                <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-	                                    <button type="button" tabindex="0" class="dropdown-item">User Account</button>
-	                                    <button type="button" tabindex="0" class="dropdown-item">Settings</button>
-	                                    <h6 tabindex="-1" class="dropdown-header">Header</h6>
-	                                    <button type="button" tabindex="0" class="dropdown-item">Actions</button>
+	                                    <button type="button" tabindex="0" class="dropdown-item">Profil</button>
+	                                    <button type="button" tabindex="0" class="dropdown-item">Paramètres</button>
+	                                    <!-- <h6 tabindex="-1" class="dropdown-header">Header</h6>
+	                                    <button type="button" tabindex="0" class="dropdown-item">Actions</button> -->
 	                                    <div tabindex="-1" class="dropdown-divider"></div>
-	                                    <button id="logout" type="button" tabindex="0" class="dropdown-item" @click="logoutUser"><i class="pe-7s-power"></i> {{ ' ' }} Logout</button>
+	                                    <button id="logout" type="button" tabindex="0" class="dropdown-item" @click="logoutUser"><i class="pe-7s-power"></i> {{ ' ' }} Se déconnecter</button>
 	                                </div>
 	                            </div>
 	                        </div>
@@ -88,11 +89,11 @@
 	                               Administateur
 	                            </div>
 	                        </div>
-	                        <div class="widget-content-right header-user-info ml-3">
+	                        <!-- <div class="widget-content-right header-user-info ml-3">
 	                            <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm show-toastr-example">
 	                                <i class="fa text-white fa-calendar pr-1 pl-1"></i>
 	                            </button>
-	                        </div>
+	                        </div> -->
 	                    </div>
 	                </div>
 	            </div>        

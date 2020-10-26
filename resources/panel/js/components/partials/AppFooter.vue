@@ -5,13 +5,8 @@
 	            <div class="app-footer-left">
 	                <ul class="nav">
 	                    <li class="nav-item">
-	                        <a href="javascript:void(0);" class="nav-link">
-	                            <i class="fa fa-cog"></i> Footer Link 1
-	                        </a>
-	                    </li>
-	                    <li class="nav-item">
-	                        <a href="javascript:void(0);" class="nav-link">
-	                            Footer Link 2
+	                        <a href="/" target="_blank" class="nav-link">
+	                            <i class="fa fa-globe" style="margin-right: 10px;"></i>  Voir le site Crépus 108
 	                        </a>
 	                    </li>
 	                </ul>
@@ -19,16 +14,10 @@
 	            <div class="app-footer-right">
 	                <ul class="nav">
 	                    <li class="nav-item">
-	                        <a href="javascript:void(0);" class="nav-link">
-	                            Footer Link 3
-	                        </a>
-	                    </li>
-	                    <li class="nav-item">
-	                        <a href="javascript:void(0);" class="nav-link">
+	                        <a href="http://makiboom.com" target="_blank" class="nav-link">
 	                            <div class="badge badge-success mr-1 ml-0">
-	                                <small>NEW</small>
+	                                <small>Created By MAKIBOOM</small>
 	                            </div>
-	                            Footer Link 4
 	                        </a>
 	                    </li>
 	                </ul>
